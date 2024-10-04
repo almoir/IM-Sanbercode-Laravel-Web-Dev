@@ -1,0 +1,23 @@
+
+1. Buat Database
+CREATE DATABASE myshop;
+
+2. Buat Table
+-users
+CREATE TABLE users( id integer AUTO_INCREMENT PRIMARY KEY, name varchar(255) NOT null, email varchar(255) NOT null, password varchar(255) NOT null );
+
+-categories
+CREATE TABLE categories( id integer AUTO_INCREMENT PRIMARY KEY, name varchar(255) NOT null );
+
+-items
+CREATE TABLE items( id integer AUTO_INCREMENT PRIMARY KEY, name varchar(255) NOT null, description varchar(255) NOT null, price integer NOT null, stock integer NOT null, category_id integer NOT null, FOREIGN KEY(category_id) REFERENCES categories(id) );
+
+3. Memasukan Data pada Table
+-users
+INSERT INTO users(name, email, password) VALUES("John Doe", "john@doe.com", "john123"), ("John Doe", "john@doe.com", "jenita123");
+
+-categories
+INSERT INTO categories(name) VALUES("gadget"), ("cloth"), ("men"), ("women"), ("branded");
+
+-items
+INSERT INTO items(name, description, price, stock, category_id) VALUES("Sumsang b50", "hape keren dari merk sumsang", 4000000, 100, 1), ("Uniklooh", "baju keren dari brand ternama", 500000, 50, 2), ("IMHO Watch", "jam tangan anak yang jujur banget", 2000000, 10, 1);
