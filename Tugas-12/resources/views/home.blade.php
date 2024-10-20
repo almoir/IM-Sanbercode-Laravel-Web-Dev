@@ -1,28 +1,23 @@
-@extends("layouts.master");
-
-@section("title")
-SanberBook
-@endsection
-
-@section('contentTitle')
-<h2>Social Media Developer Santai Berkualitas</h2>
-<p>Belajar dan Berbagi agar hidup ini semakin santai berkualitas</p>
-@endsection
+@extends('layouts.app')
 
 @section('content')
-<h3>Benefit Join di SanberBook</h3>
-    <ul>
-      <li>Mendapatkan motivasi dari sesama developer</li>
-      <li>Sharing knowledge dari para mastah Sanber</li>
-      <li>Dibuat oleh calon developer terbaik</li>
-    </ul>
-    <h3>Cara Bergabung ke SanberBook</h3>
-    <ol>
-      <li>Mengunjungi website ini</li>
-      <li>Mendaftar di <a href="/register">Form Sign Up</a></li>
-      <li>Selesai!</li>
-    </ol>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Dashboard') }}</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    {{ __('You are logged in!') }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
-    
-    
- 

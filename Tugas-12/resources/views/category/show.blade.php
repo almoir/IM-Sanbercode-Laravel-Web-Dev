@@ -6,7 +6,7 @@
 
 @section('contentTitle')
 
-<a href="/category/create" class="btn btn-info btn-sm">Tambah</a>
+<a href="/category/create" class="btn btn-outline-secondary">+ Category</a>
     
 @endsection
 
